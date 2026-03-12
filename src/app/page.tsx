@@ -19,63 +19,36 @@ export default function Home() {
         <div className="absolute top-1/4 -right-1/4 w-[800px] h-[800px] bg-brand-gold/[0.03] rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-gold/[0.02] rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left – Copy */}
-            <div className="max-w-xl">
-              <p className="text-brand-gold text-sm font-semibold tracking-[0.25em] uppercase mb-6">
-                For Service Businesses Doing $250K+/mo
-              </p>
+        <div className="max-w-4xl mx-auto px-6 w-full">
+          <div className="flex flex-col items-center text-center">
+            {/* Eyebrow */}
+            <p className="text-brand-gold text-sm font-semibold tracking-[0.25em] uppercase mb-6">
+              For Service Businesses Doing $250K+/mo
+            </p>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
-                Stop Losing Leads.{" "}
-                <span className="gradient-text">Start Closing Deals.</span>
-              </h1>
+            {/* Headline */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] mb-4">
+              $10 Million in Ad Spend Exposed the Same Fatal Mistake in Every Single Business We Touched.{" "}
+              <span className="gradient-text">Yours Probably Has It Too.</span>
+            </h1>
 
-              <p className="text-lg text-white/60 leading-relaxed mb-10">
-                We build high-converting sales funnels that turn ad spend into
-                booked calls and closed deals — so you can scale from $250K to
-                $1M/month and beyond, without leads falling through the cracks.
-              </p>
+            {/* Sub-headline */}
+            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-10 max-w-2xl">
+              Your ads aren&apos;t converting, your leads aren&apos;t closing, and your
+              show rate is stuck at 20%. You don&apos;t need another media buyer — you
+              need an end-to-end system built by one team that sees the full picture.
+            </p>
 
-              <div className="flex flex-col sm:flex-row items-start gap-4">
-                <SurveyButton className="btn-primary">
-                  Apply To Work With Us
-                </SurveyButton>
-                <a href="#how-it-works" className="btn-secondary">
-                  See How It Works
-                </a>
-              </div>
-
-              {/* Trust bar */}
-              <div className="flex items-center gap-6 mt-12 pt-8 border-t border-white/5">
-                <div className="text-center">
-                  <p className="text-white font-bold text-xl">$10M+</p>
-                  <p className="text-white/40 text-xs mt-1">In Ad Spend Managed</p>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="text-center">
-                  <p className="text-white font-bold text-xl">5,000+</p>
-                  <p className="text-white/40 text-xs mt-1">Clients Acquired</p>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="text-center">
-                  <p className="text-white font-bold text-xl">70%</p>
-                  <p className="text-white/40 text-xs mt-1">Avg. Show Rate</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right – Video */}
-            <div className="relative">
+            {/* VSL Video */}
+            <div className="relative w-full max-w-3xl mb-10">
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-brand-card" style={{ animation: "pulse-glow 4s ease-in-out infinite" }}>
                 <div className="aspect-video relative flex items-center justify-center bg-gradient-to-br from-brand-card to-brand-black">
                   <div className="text-center">
-                    <SurveyButton className="w-20 h-20 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform">
+                    <div className="w-20 h-20 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform cursor-pointer">
                       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <path d="M12 8l16 8-16 8V8z" fill="#0E0E0E" stroke="#0E0E0E" strokeWidth="2" strokeLinejoin="round" />
                       </svg>
-                    </SurveyButton>
+                    </div>
                     <p className="text-white/40 text-sm">
                       Watch How We Scale Service Businesses
                     </p>
@@ -84,6 +57,29 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-3 -right-3 w-24 h-24 border-b-2 border-r-2 border-brand-gold/20 rounded-br-2xl pointer-events-none" />
               <div className="absolute -top-3 -left-3 w-24 h-24 border-t-2 border-l-2 border-brand-gold/20 rounded-tl-2xl pointer-events-none" />
+            </div>
+
+            {/* CTA Button */}
+            <SurveyButton className="btn-primary !text-lg !py-5 !px-12 mb-10">
+              Apply To Work With Us
+            </SurveyButton>
+
+            {/* Trust bar */}
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 pt-8 border-t border-white/5 w-full max-w-xl">
+              <div className="text-center">
+                <p className="text-white font-bold text-xl">$10M+</p>
+                <p className="text-white/40 text-xs mt-1">Ad Spend Managed</p>
+              </div>
+              <div className="w-px h-10 bg-white/10 hidden sm:block" />
+              <div className="text-center">
+                <p className="text-white font-bold text-xl">5,000+</p>
+                <p className="text-white/40 text-xs mt-1">Clients Acquired</p>
+              </div>
+              <div className="w-px h-10 bg-white/10 hidden sm:block" />
+              <div className="text-center">
+                <p className="text-white font-bold text-xl">70%</p>
+                <p className="text-white/40 text-xs mt-1">Avg. Show Rate</p>
+              </div>
             </div>
           </div>
         </div>
@@ -121,8 +117,8 @@ export default function Home() {
 
           <p className="text-center text-white/20 text-sm mt-10 max-w-2xl mx-auto leading-relaxed">
             After 8+ years and over $10 million in managed ad spend across every major platform, we&apos;ve
-            reverse-engineered the exact system for building funnels that turn clicks into dollars —
-            no matter where your audience lives.
+            learned that every growth problem traces back to the same thing — there&apos;s a hole in your
+            business, and most people are trying to patch one spot while the rest of it keeps leaking.
           </p>
         </div>
       </section>
@@ -147,33 +143,33 @@ export default function Home() {
             {[
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2v24M2 14h24" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" /><circle cx="14" cy="14" r="12" stroke="#BB9A65" strokeWidth="2" opacity="0.3" /></svg>,
-                title: "Hemorrhaging Ad Spend",
-                desc: "You're pouring money into ads but can't trace where your leads end up — or why they're not converting.",
+                title: "Ads Aren't Converting",
+                desc: "You're getting impressions, you're getting clicks, and your bank account is quietly bleeding out with nothing to show for it.",
               },
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="4" stroke="#BB9A65" strokeWidth="2" opacity="0.3" /><path d="M9 14h10M14 9v10" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" /></svg>,
-                title: "CRM Graveyard",
-                desc: "Your CRM is where leads go to die. No automations, no follow-up sequences, no system to keep deals moving.",
-              },
-              {
-                icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 24l8-8 4 4 8-12" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
-                title: "Stuck at a Revenue Ceiling",
-                desc: "You've hit $250K–$500K/month but can't figure out what's blocking the next level of growth.",
+                title: "Leads Aren't Closing",
+                desc: "Your dashboard looks fine. Leads are coming in. But those leads aren't turning into dollars — just names in a CRM that nobody's closing.",
               },
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z" stroke="#BB9A65" strokeWidth="2" strokeLinejoin="round" opacity="0.3" /><path d="M10 18l8-8" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" /></svg>,
-                title: "No Show Problem",
-                desc: "Leads book calls but never show up. You have no email or SMS sequences nurturing them to the appointment.",
+                title: "Show Rate Is Tanking",
+                desc: "People are booking calls but your show rate is 15, maybe 20 percent. 80% of what you spent to get that appointment just evaporated.",
+              },
+              {
+                icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 24l8-8 4 4 8-12" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
+                title: "Flying Blind on Numbers",
+                desc: "You don't know your cost per booked call, your cost to acquire a customer, or the lifetime value of the people you're closing. You're guessing at scale.",
               },
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="11" stroke="#BB9A65" strokeWidth="2" opacity="0.3" /><path d="M14 8v6l4 4" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
-                title: "Doing It All Yourself",
-                desc: "You're wearing the marketing hat, the sales hat, and the tech hat — and none of them fit right.",
+                title: "Too Many Vendors, No System",
+                desc: "A media buyer here, a funnel builder there, someone for email and SMS — every one of them working in isolation with no one seeing the full picture.",
               },
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 8h20v14a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="#BB9A65" strokeWidth="2" opacity="0.3" /><path d="M10 14l3 3 5-6" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
-                title: "Funnel? What Funnel?",
-                desc: "You don't have a real sales funnel. Or worse — you have one cobbled together that leaks leads at every stage.",
+                title: "Expensive Guessing Game",
+                desc: "Without actual data, you cannot make a confident decision about whether putting more into ad spend is worth it. Every month without fixing the foundation is money you're never getting back.",
               },
             ].map((item, i) => (
               <div key={i} className="card-dark p-8 group">
@@ -231,7 +227,7 @@ export default function Home() {
                 Online Coaching — Skool
               </p>
               <p className="text-white/40 text-sm mb-6 leading-relaxed">
-                Ran a $10K campaign for a fitness coaching business to fill their online community on Skool.
+                A fitness coach was stuck at 40 members in his Skool community. No real acquisition system, nothing converting. We built the full front-to-back system — positioning, funnel, paid traffic strategy, all of it working together.
               </p>
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/5 pb-3">
@@ -256,7 +252,7 @@ export default function Home() {
                 Real Estate — Seller Leads
               </p>
               <p className="text-white/40 text-sm mb-6 leading-relaxed">
-                Hyper-local seller lead campaign for a real estate agent generating over $243M in sales volume in less than a year.
+                A real estate investor in Myrtle Beach was completely dependent on friends and family for seller leads. No pipeline, no data, no predictability. We built a cold acquisition system from scratch.
               </p>
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/5 pb-3">
@@ -282,10 +278,10 @@ export default function Home() {
             <div className="card-dark p-8 relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 gradient-bg opacity-60" />
               <p className="text-brand-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
-                Coaching — Funnel Rebuild
+                7th Level — Full Rebuild
               </p>
               <p className="text-white/40 text-sm mb-6 leading-relaxed">
-                Rebuilt the front-end funnel, email/SMS automations, and backend CRM sales process for a coaching business.
+                Jeremy Miner at 7th Level brought us in to do the hardest thing — a full rebuild. Their sales system wasn&apos;t built to scale. We rebuilt the entire thing from the ground up, engineered so the business could grow without cracking under pressure.
               </p>
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/5 pb-3">
@@ -322,8 +318,9 @@ export default function Home() {
               <span className="gradient-text">Growth Engine</span>
             </h2>
             <p className="text-white/50 text-lg">
-              We don&apos;t just run ads. We build the entire machine — from
-              first click to closed deal.
+              Media buying alone is not the answer. Landing pages alone are not the answer.
+              Email and SMS alone are not the answer. You need the entire system — built as
+              one thing, not assembled from five different vendors who&apos;ve never talked to each other.
             </p>
           </div>
 
@@ -478,13 +475,13 @@ export default function Home() {
             Ready To Scale?
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-            Every Day Without a System,{" "}
-            <span className="gradient-text">You&apos;re Leaving Money on the Table</span>
+            Every Month Without a System Is{" "}
+            <span className="gradient-text">Money You&apos;re Never Getting Back</span>
           </h2>
           <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Your competitors are building funnels, automating follow-ups, and
-            closing deals while you&apos;re still figuring out where your leads went.
-            It&apos;s time to change that.
+            If you can&apos;t answer what your cost to acquire a customer is, what that
+            customer is worth over time, and which part of your funnel is costing you the
+            most — you don&apos;t have a scaling business. You have an expensive guessing game.
           </p>
 
           <SurveyButton className="btn-primary !text-lg !py-5 !px-12">
@@ -492,7 +489,7 @@ export default function Home() {
           </SurveyButton>
 
           <p className="text-white/30 text-sm mt-6">
-            Limited spots available — we only take on 5 new clients per month.
+            We take a very limited number of partners at a time. When we&apos;re at capacity, we close applications.
           </p>
         </div>
       </RevealSection>

@@ -6,15 +6,15 @@ import SurveyButton from "./SurveyButton";
 const faqs = [
   {
     q: "How much does it cost to work with Capital Growth Club?",
-    a: "Our engagements are custom-priced based on the scope of your funnel build, ad spend, and the systems we're implementing. We work with businesses doing $250K+/month because our services require a serious investment — but our clients consistently see 3–5x returns within the first 90 days. We'll walk you through pricing on your strategy call once we understand your specific situation.",
+    a: "We don't believe in making you sit through a sales call just to find out if the numbers make sense. For an ongoing working relationship — where we're inside your business every month managing, optimizing, and building — engagements range from $5,000 to $20,000/month depending on scope, with the potential for a revenue share arrangement on top. For one-time build-and-handoff projects, those start in the mid five figures and can go into six figures depending on what needs to be built. This is not a cheap service. But if you're doing real numbers and you're serious about building a system that performs, the investment reflects what it takes to do this right.",
   },
   {
     q: "How is this different from every other marketing agency?",
-    a: "Most agencies do one thing — run ads, build a website, or set up a CRM. We build the entire system end-to-end. From identifying your ideal customer and scripting your ads, to building your funnel, setting up CRM automations, and optimizing for closed deals. You're not hiring a vendor — you're getting a growth partner that owns the full pipeline.",
+    a: "Most businesses are hiring for pieces — a media buyer here, a funnel builder there, someone for email and SMS — and every one of those people is doing their job in isolation with no one seeing the full picture. We build the entire system end-to-end as one thing. Someone who crafts the ad that stops the right person mid-scroll, builds the funnel that turns that lead into a booked call, and handles everything between the opt-in and the appointment — the nurture, the follow-up, the confirmation sequence. That's the difference between a 20% show rate and a 70% show rate.",
   },
   {
     q: "I've been burned by agencies before. How do I know this will actually work?",
-    a: "We get it — and that's exactly why we have an application process. We don't take on clients we can't help. Every system we build is backed by $12M+ in managed ad spend and real campaign data. We'll show you case studies from businesses in your industry on the strategy call so you can see exactly what to expect.",
+    a: "We get it — and that's exactly why we have a qualification process. Not to be difficult, but because if we can't see a clear and honest path to a return for you, we won't take the engagement. We'd rather tell you that now than have you three months in without results. Every system we build is backed by $10M+ in managed ad spend and real campaign data. When we're at capacity, we close applications.",
   },
   {
     q: "How long does it take to see results?",
