@@ -43,6 +43,16 @@ const questions = [
   },
   {
     question:
+      "Do you have a social media presence that positions you as a trusted authority in your space?",
+    options: [
+      { label: "No real presence yet", points: 1 },
+      { label: "I post occasionally but nothing consistent", points: 2 },
+      { label: "Yes, I post regularly and engage with my audience", points: 4 },
+      { label: "Strong presence — people know me as the go-to in my niche", points: 5 },
+    ],
+  },
+  {
+    question:
       "Do you have proof? (results, testimonials, case studies, numbers)",
     options: [
       { label: "None yet", points: 1 },

@@ -13,33 +13,33 @@ interface Result {
 
 const results: { min: number; max: number; data: Result }[] = [
   {
-    min: 7,
-    max: 14,
+    min: 8,
+    max: 16,
     data: {
-      level: 5,
-      label: "Completely Unaware",
+      level: 1,
+      label: "Unaware",
       headline: "Plant the seed. Don't sell yet.",
       summary:
-        "Your market doesn't know they have a problem yet. Don't waste budget trying to capture leads at this stage — they're not ready. The only job of these ads is to interrupt their scroll and introduce a problem they didn't know they had. Time and repetition will move them into Level 4 naturally, where your next campaign picks them up.",
+        "Your market doesn't know they have a problem yet. Don't waste budget trying to capture leads at this stage — they're not ready. The only job of these ads is to interrupt their scroll and introduce a problem they didn't know they had. Time and repetition will move them into Level 2 naturally, where your next campaign picks them up.",
       actions: [
         "Run curiosity-driven cold traffic ads only — no hard CTA",
         "Do NOT push a lead magnet here — they won't convert and it wastes spend",
         "Let the ad do one job: make them aware a problem exists",
-        "Set up your Level 4 campaign in parallel so it catches them when they're ready",
+        "Set up your Level 2 campaign in parallel so it catches them when they're ready",
       ],
     },
   },
   {
-    min: 15,
-    max: 21,
+    min: 17,
+    max: 24,
     data: {
-      level: 4,
+      level: 2,
       label: "Problem Aware",
       headline: "Lead with the pain. This is your best lead magnet audience.",
       summary:
         "These people already feel the problem — which means they are motivated to take action. You don't need a big brand presence or a warm audience to convert them. A well-placed lead magnet that speaks directly to their frustration will outperform almost anything else at this stage. They're the most likely to hand over their email or even a small payment just to get relief.",
       actions: [
-        "Run pain-driven cold ads that name their exact frustration (Level 4 hooks)",
+        "Run pain-driven cold ads that name their exact frustration (Level 2 hooks)",
         "Send them to a lead magnet that promises a specific solution to that pain (checklist, guide, mini course, quiz)",
         "Nurture leads with emails that bridge from problem → solution → your offer",
         "Retarget non-converters with promise-driven messaging (Level 3)",
@@ -47,8 +47,8 @@ const results: { min: number; max: number; data: Result }[] = [
     },
   },
   {
-    min: 22,
-    max: 27,
+    min: 25,
+    max: 31,
     data: {
       level: 3,
       label: "Solution Aware",
@@ -58,38 +58,39 @@ const results: { min: number; max: number; data: Result }[] = [
         "You have proof, an audience, and a real sales process. Your market knows solutions exist — now you need to position yours as the best one.",
       actions: [
         "Run promise-driven cold ads with a clear outcome and timeframe (Level 3)",
-        "Layer in proof-driven retargeting for warm audiences (Level 2)",
-        "Close hot audiences with an irresistible offer (Level 1)",
+        "Layer in proof-driven retargeting for warm audiences (Level 4)",
+        "Close hot audiences with an irresistible offer (Level 5)",
         "A/B test your hook angle — specificity wins at this stage",
       ],
     },
   },
   {
-    min: 28,
-    max: 35,
+    min: 32,
+    max: 40,
     data: {
-      level: 2,
+      level: 4,
       label: "Product Aware",
       headline:
         "Lead with proof. They know you exist — now convince them.",
       summary:
         "You're established. People know you or know of you. Your cold audience needs to see why you're the obvious choice. Your warm audience is ready for an offer.",
       actions: [
-        "Run proof-driven cold ads with specific results (Level 2 hooks)",
-        "Hit warm retarget audiences with offer-driven ads (Level 1)",
-        "Test curiosity hooks to reach brand new cold audiences (Level 5)",
+        "Run proof-driven cold ads with specific results (Level 4 hooks)",
+        "Hit warm retarget audiences with offer-driven ads (Level 5)",
+        "Test curiosity hooks to reach brand new cold audiences (Level 1)",
         "Run all 3 campaign layers simultaneously — you have the budget and proof",
       ],
     },
   },
 ];
 
-const allLevels = [
-  { level: 5, label: "Completely Unaware" },
-  { level: 4, label: "Problem Aware" },
+// Pyramid order: top (Level 5) to bottom (Level 1)
+const pyramidLevels = [
+  { level: 5, label: "Most Aware" },
+  { level: 4, label: "Product Aware" },
   { level: 3, label: "Solution Aware" },
-  { level: 2, label: "Product Aware" },
-  { level: 1, label: "Most Aware" },
+  { level: 2, label: "Problem Aware" },
+  { level: 1, label: "Unaware" },
 ];
 
 const confettiColors = [
@@ -279,50 +280,66 @@ function ResultsContent() {
             <span className="text-brand-gold text-2xl font-bold">
               {score}
             </span>
-            <span className="text-brand-muted text-sm">/35</span>
+            <span className="text-brand-muted text-sm">/40</span>
           </div>
         </div>
 
-        {/* Level indicator */}
+        {/* Pyramid indicator */}
         <div className="mb-10 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          <div className="bg-brand-card border border-white/[0.06] rounded-2xl p-6">
-            <div className="flex flex-col gap-2">
-              {allLevels.map((lvl) => (
-                <div
-                  key={lvl.level}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${
-                    lvl.level === result.level
-                      ? "bg-brand-gold/10 border border-brand-gold/30"
-                      : "opacity-40"
-                  }`}
-                >
+          <div className="bg-brand-card border border-white/[0.06] rounded-2xl p-6 md:p-8">
+            <p className="text-center text-brand-muted text-xs tracking-[0.2em] uppercase mb-6">
+              The Profitable Ads Pyramid
+            </p>
+            <div className="flex flex-col items-center gap-1">
+              {pyramidLevels.map((lvl, i) => {
+                const isActive = lvl.level === result.level;
+                // Pyramid widths: top is narrowest, bottom is widest
+                const widths = ["40%", "55%", "70%", "85%", "100%"];
+                return (
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 ${
-                      lvl.level === result.level
-                        ? "gradient-bg text-brand-black"
-                        : "bg-white/5 text-brand-muted"
-                    }`}
+                    key={lvl.level}
+                    className="relative flex justify-center"
+                    style={{ width: widths[i] }}
                   >
-                    {lvl.level}
-                  </div>
-                  <span
-                    className={`text-sm font-medium ${
-                      lvl.level === result.level
-                        ? "text-white"
-                        : "text-brand-muted"
-                    }`}
-                  >
-                    Level {lvl.level}: {lvl.label}
-                  </span>
-                  {lvl.level === result.level && (
-                    <div className="ml-auto">
-                      <span className="gradient-text text-xs font-bold tracking-wider uppercase">
-                        You are here
+                    {/* Trapezoid shape via clip-path */}
+                    <div
+                      className={`w-full py-4 md:py-5 text-center transition-all duration-300 ${
+                        isActive
+                          ? "bg-brand-gold/20 border-brand-gold/40"
+                          : "bg-white/[0.03] border-white/[0.06]"
+                      }`}
+                      style={{
+                        clipPath:
+                          i === 0
+                            ? "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)"
+                            : "polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%)",
+                        borderWidth: "1px",
+                        borderStyle: "solid",
+                        borderColor: isActive
+                          ? "rgba(187, 154, 101, 0.4)"
+                          : "rgba(255, 255, 255, 0.06)",
+                      }}
+                    >
+                      <span
+                        className={`text-xs md:text-sm font-bold tracking-wide uppercase ${
+                          isActive ? "gradient-text" : "text-brand-muted/60"
+                        }`}
+                      >
+                        {lvl.label}
                       </span>
                     </div>
-                  )}
-                </div>
-              ))}
+                    {/* "You are here" indicator */}
+                    {isActive && (
+                      <div className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 translate-x-full flex items-center gap-1.5">
+                        <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-brand-gold" />
+                        <span className="gradient-text text-[10px] md:text-xs font-bold tracking-wider uppercase whitespace-nowrap">
+                          You are here
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -393,8 +410,8 @@ function ResultsContent() {
             </h3>
 
             <p className="text-brand-grey text-sm leading-relaxed mb-6">
-              {result.level >= 4
-                ? "Even though you're starting at the bottom of the awareness ladder, this is exactly where the biggest opportunities live. Every business — no matter how established — needs cold traffic campaigns running at Levels 4 and 5. New customers who need your product or service enter the market every single day. You will never run out of people to reach with ads. The only thing that changes is volume — it fluctuates seasonally, but the demand never disappears."
+              {result.level <= 2
+                ? "Even though you're starting at the bottom of the awareness ladder, this is exactly where the biggest opportunities live. Every business — no matter how established — needs cold traffic campaigns running at Levels 1 and 2. New customers who need your product or service enter the market every single day. You will never run out of people to reach with ads. The only thing that changes is volume — it fluctuates seasonally, but the demand never disappears."
                 : "A high score doesn't mean you only run ads at the top of the awareness ladder. The biggest mistake established businesses make is ignoring cold traffic. New customers who need your product or service enter the market every single day. You will never run out of people to reach with ads. The only thing that changes is volume — it fluctuates seasonally, but the demand never disappears. Your job is to build campaigns across multiple awareness levels so you're always filling the top of the funnel while converting the bottom."}
             </p>
 
@@ -408,9 +425,9 @@ function ResultsContent() {
                   <span className="text-brand-gold text-xs font-bold">1</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium mb-1">Export your buyer list from your CRM</p>
+                  <p className="text-white text-sm font-medium mb-1">Use your social presence as your first audience lever</p>
                   <p className="text-brand-muted text-xs leading-relaxed">
-                    Upload your past customers and closed deals as a Custom Audience in Meta. These are your highest-value people — they already trust you and bought from you. Use this audience to create Lookalike Audiences that find more people just like them.
+                    Even if your business is brand new, a strong social media presence gives you leverage. If people can look you up and see you&apos;re a real person who knows what they&apos;re talking about, you can run ads that move people up the awareness ladder faster. Create Custom Audiences from your Instagram or Facebook followers, page engagers, and video viewers — these are people who already see you as credible and are far more likely to convert.
                   </p>
                 </div>
               </div>
@@ -420,9 +437,9 @@ function ResultsContent() {
                   <span className="text-brand-gold text-xs font-bold">2</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium mb-1">Create Lookalike Audiences (1%–3%)</p>
+                  <p className="text-white text-sm font-medium mb-1">Export your buyer list from your CRM (when you&apos;re ready)</p>
                   <p className="text-brand-muted text-xs leading-relaxed">
-                    A 1% Lookalike of your buyer list is the closest match to your existing customers. This is your best cold traffic audience. Start here for Level 4 and 5 campaigns — these people look like buyers but don&apos;t know you yet.
+                    Once you have <span className="text-white font-medium">400+ contacts</span>, upload your past customers and closed deals as a Custom Audience in Meta. This is the minimum Meta requires to build a Lookalike Audience. If you&apos;re not there yet, don&apos;t worry — start by building Custom Audiences from your social media followers, page engagers, and video viewers instead. These work just as well as a seed audience while you grow your customer list.
                   </p>
                 </div>
               </div>
@@ -432,9 +449,9 @@ function ResultsContent() {
                   <span className="text-brand-gold text-xs font-bold">3</span>
                 </div>
                 <div>
-                  <p className="text-white text-sm font-medium mb-1">Build retargeting audiences by engagement</p>
+                  <p className="text-white text-sm font-medium mb-1">Create Lookalike Audiences (1%–3%)</p>
                   <p className="text-brand-muted text-xs leading-relaxed">
-                    Create audiences based on who watched your video ads (25%, 50%, 75%), who visited your landing page, and who engaged with your page or ads. Each of these groups is at a different awareness level — and should see different messaging.
+                    Whether you&apos;re using a buyer list (400+ contacts) or social engagement audiences, a 1% Lookalike finds the people most similar to your seed audience. This is your best cold traffic audience. Start here for Level 1 and 2 campaigns — these people look like your warmest contacts but don&apos;t know you yet.
                   </p>
                 </div>
               </div>
@@ -444,9 +461,21 @@ function ResultsContent() {
                   <span className="text-brand-gold text-xs font-bold">4</span>
                 </div>
                 <div>
+                  <p className="text-white text-sm font-medium mb-1">Build retargeting audiences by engagement</p>
+                  <p className="text-brand-muted text-xs leading-relaxed">
+                    Create audiences based on who watched your video ads (25%, 50%, 75%), who visited your landing page, and who engaged with your page or ads. Each of these groups is at a different awareness level — and should see different messaging as you move them up the pyramid.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start bg-white/[0.02] border border-white/[0.04] rounded-xl px-5 py-4">
+                <div className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-brand-gold text-xs font-bold">5</span>
+                </div>
+                <div>
                   <p className="text-white text-sm font-medium mb-1">Layer your campaigns across awareness levels</p>
                   <p className="text-brand-muted text-xs leading-relaxed">
-                    Run cold traffic at the bottom (Levels 5 &amp; 4) to fill the funnel. Retarget engagers with solution and proof-driven ads (Levels 3 &amp; 2). Close warm audiences with direct offers (Level 1). Every layer feeds the next — this is how you scale without burning out your audience.
+                    Run cold traffic at the bottom (Levels 1 &amp; 2) to fill the funnel. Retarget engagers with solution and proof-driven ads (Levels 3 &amp; 4). Close warm audiences with direct offers (Level 5). Every layer feeds the next — this is how you scale without burning out your audience.
                   </p>
                 </div>
               </div>
