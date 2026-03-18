@@ -327,16 +327,12 @@ function ResultsContent() {
                       >
                         {lvl.label}
                       </span>
-                    </div>
-                    {/* "You are here" indicator */}
-                    {isActive && (
-                      <div className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 translate-x-full flex items-center gap-1.5">
-                        <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-brand-gold" />
-                        <span className="gradient-text text-[10px] md:text-xs font-bold tracking-wider uppercase whitespace-nowrap">
-                          You are here
+                      {isActive && (
+                        <span className="block gradient-text text-[9px] md:text-[10px] font-medium tracking-wider mt-0.5">
+                          (you are here)
                         </span>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                 );
               })}
