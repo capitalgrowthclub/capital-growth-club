@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import RevealSection from "@/components/RevealSection";
 import AnimatedStat from "@/components/AnimatedStat";
 import FaqSection from "@/components/FaqSection";
+import TestimonialScroll from "@/components/TestimonialScroll";
 
 /* ─── Main Page (Server Component) ─── */
 export default function Home() {
@@ -655,37 +656,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="marquee-wrapper">
-          <div className="marquee-track">
-            {[...Array(2)].map((_, dup) => (
-              <div key={dup} className="flex gap-6" aria-hidden={dup === 1 ? "true" : undefined}>
-                {[
-                  { quote: "We were getting tons of calls from our Google Ads but half of them were for jobs we don't even do. Nobody had set up negative keywords. CGC cleaned up our campaigns and our cost per booked job dropped by 55% in the first month.", author: "Jake R.", role: "Home Services — HVAC" },
-                  { quote: "Our biggest issue was new patient no-shows. People would book online and never walk through the door. CGC built an automated reminder and confirmation sequence — texts, emails, the works. Our no-show rate went from 35% down to 8%.", author: "Dr. Sarah M.", role: "Medical Practice" },
-                  { quote: "We were spending $15K/mo on ads and getting case leads, but our intake team wasn't calling them fast enough. CGC set up a system where every new lead gets a call within 90 seconds. Our signed retainer rate doubled.", author: "Marcus T.", role: "Legal — Personal Injury" },
-                  { quote: "In financial services, trust is everything. CGC restructured our entire funnel so prospects saw three pieces of educational content before we ever asked for a consultation. Our consultation-to-client conversion went from 12% to 34%.", author: "Angela P.", role: "Financial Advisory" },
-                  { quote: "Storm season is make or break for us. We were bidding on 'roof repair' and competing with every roofer in the metro. CGC rebuilt our campaigns around emergency and insurance-specific keywords and built separate landing pages for each. Our cost per inspection dropped from $280 to $95.", author: "David & Lisa K.", role: "Roofing Company" },
-                  { quote: "I had a $15K coaching program and was running the same 4 ads for five months straight. CGC came in with a creative rotation strategy — 30+ new hooks per month — and my application flow tripled while my cost per application went down.", author: "Chris W.", role: "Coaching — Business Strategy" },
-                  { quote: "Our problem was never leads — we had plenty of buyer and seller inquiries. The problem was our follow-up. Leads would come in and sit untouched for days. CGC built a nurture system that follows up automatically for 6 months. We closed 3 listings last quarter from leads that were 90+ days old.", author: "Priya S.", role: "Real Estate Team" },
-                  { quote: "Our Google LSA was barely getting us calls because our profile was half-filled and we had 12 reviews. CGC helped us build a review generation system and optimized the profile. Within 8 weeks we went from 3 calls a week to 15.", author: "Tom H.", role: "Home Services — Plumbing" },
-                  { quote: "We were running Facebook ads to our homepage. That was the whole strategy. CGC built us a dedicated new patient landing page with an intro offer and our conversion rate went from 1.9% to 11%. Same ad spend, completely different result.", author: "Rachel & Ben F.", role: "Dental Practice" },
-                  { quote: "We had no idea what our cost to acquire a policy was. We just knew we were spending money on ads and getting some quotes. CGC built tracking from ad click all the way to bound policy. Turns out our best channel was one we were about to cut.", author: "Michael D.", role: "Insurance Agency" },
-                  { quote: "I was running the same Botox and filler specials everyone else was running. CGC repositioned our offer around a signature consultation experience and built a funnel around it. Our average treatment value went up 40% because we stopped competing on price.", author: "Stephanie L.", role: "Med Spa" },
-                  { quote: "In solar, the sale happens in the home — but getting the appointment set is where most companies bleed out. CGC built a pre-qualification funnel that filters out renters and low-credit leads before they ever hit our calendar. Our in-home close rate jumped from 22% to 41%.", author: "Jordan & Kyle M.", role: "Solar Installation" },
-                ].map((t, i) => (
-                  <div key={i} className="flex-shrink-0 w-[340px] md:w-[380px] bg-brand-card rounded-xl p-7 border border-white/5 flex flex-col gap-4">
-                    <div className="text-brand-gold text-sm tracking-widest">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p className="text-white/70 text-sm leading-relaxed flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
-                    <div>
-                      <span className="text-white font-semibold text-sm">{t.author}</span>
-                      <span className="text-white/30 text-xs ml-2">{t.role}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+        <TestimonialScroll />
       </section>
 
       {/* ════════════════ SOLUTION — "Your Complete Growth Engine" ════════════════ */}
@@ -693,27 +664,28 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-brand-gold text-sm font-semibold tracking-[0.25em] uppercase mb-4">
-              The Full System
+              How We Fix It
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Your Complete{" "}
-              <span className="gradient-text">Growth Engine</span>
+              One Team. One System.{" "}
+              <span className="gradient-text">Built for Your Business.</span>
             </h2>
             <p className="text-white/50 text-lg">
-              Most service businesses hire a media buyer, a funnel builder, a CRM person, and an email
-              team — none of whom talk to each other. That&apos;s not a growth system. That&apos;s a money pit.
-              We build the entire engine as one thing.
+              Every service business is different — so we don&apos;t hand you a template.
+              We audit what&apos;s broken, build what&apos;s missing, and connect every piece so
+              your ads, your funnel, and your sales process work as one system instead
+              of three separate problems.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { step: "01", title: "ICP Research & Offer Creation", desc: "We identify your ideal client for your service business, craft an irresistible offer, and build a lead magnet that pulls them in — so every dollar attracts people who actually need what you do." },
-              { step: "02", title: "Ad Creative & Production", desc: "We script your ads, help you film them, and handle all editing and post-production — giving your service business scroll-stopping content that books calls, not just clicks." },
-              { step: "03", title: "Landing Pages & Funnel Build", desc: "Custom-built, conversion-optimized landing pages and funnels designed to turn cold traffic into booked consultations and appointments for your service." },
-              { step: "04", title: "Ad Launch & Management", desc: "We launch, monitor, and scale your campaigns across Meta, Google, and YouTube — with daily optimization so your service business gets more clients for less spend." },
-              { step: "05", title: "CRM Setup & Integrations", desc: "We build your backend system from scratch — pipeline stages, lead routing, task automations, and integrations so no potential client slips through the cracks." },
-              { step: "06", title: "Email & SMS Automations", desc: "Automated nurture sequences, appointment reminders, and follow-up flows that boost show rates and close more service agreements on autopilot." },
+              { step: "01", title: "Find Your Ideal Client", desc: "We dig into your market, your competition, and your past wins to figure out exactly who your most profitable clients are — then we build everything around attracting more of them." },
+              { step: "02", title: "Fix Your Front End", desc: "Whether it's your ads, your offer, your landing pages, or all three — we rebuild the front of your funnel so the right people are coming in and converting, not just clicking." },
+              { step: "03", title: "Build What Converts", desc: "Some businesses need a lead magnet. Others need a direct booking flow. Some need a VSL. We build whatever your market actually responds to — not what a playbook says you should have." },
+              { step: "04", title: "Launch & Manage Your Campaigns", desc: "We run your paid traffic across the channels that make sense for your service — Meta, Google, LSA, YouTube — with fresh creative, proper structure, and daily optimization." },
+              { step: "05", title: "Connect Your Backend", desc: "Your CRM, your pipeline, your lead routing, your team notifications — we wire it all together so every lead is tracked, followed up on, and never falls through the cracks." },
+              { step: "06", title: "Automate Your Follow-Up", desc: "Speed-to-lead, appointment reminders, no-show recovery, long-term nurture — we build the automations that turn your sales process into a system that runs whether you're watching it or not." },
             ].map((item) => (
               <div key={item.step} className="card-dark p-8 group relative overflow-hidden">
                 <span className="absolute top-6 right-6 text-6xl font-bold text-white/[0.03] group-hover:text-brand-gold/[0.08] transition-colors">

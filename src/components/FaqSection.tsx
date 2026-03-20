@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "How long does it take to see results?",
-    a: "Most clients see their full funnel live within 14–21 days of onboarding. From there, you can expect to see qualified leads coming in within the first week of launch. Meaningful revenue impact — booked calls, closed deals, and measurable ROI — typically shows within 30–60 days depending on your sales cycle.",
+    a: "Most clients see their full system live within 14–21 days of onboarding, with qualified leads coming in shortly after launch. But real impact takes 90–180 days. In the first 90 days, we're testing, learning what works for your specific market, and dialing in your campaigns, funnel, and backend. The next 90 days is where we squeeze the juice — hyper-focused on optimizing every piece for maximum output from your input. This isn't a quick fix. It's a system build, and the businesses that commit to the full cycle are the ones that scale.",
   },
   {
     q: "Do I need to create the ad content myself?",
