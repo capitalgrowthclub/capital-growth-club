@@ -67,20 +67,20 @@ export default function Home() {
             </SurveyButton>
 
             {/* Trust bar */}
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 pt-8 border-t border-white/5 w-full max-w-xl">
-              <div className="text-center">
+            <div className="flex items-center justify-center pt-8 border-t border-white/5 w-full max-w-xl">
+              <div className="text-center flex-1">
                 <p className="text-white font-bold text-xl">306+</p>
                 <p className="text-white/40 text-xs mt-1">Service Businesses Served</p>
               </div>
-              <div className="w-px h-10 bg-white/10 hidden sm:block" />
-              <div className="text-center">
+              <div className="w-px h-10 bg-white/10" />
+              <div className="text-center flex-1">
                 <p className="text-white font-bold text-xl">28,692+</p>
                 <p className="text-white/40 text-xs mt-1">Clients Acquired</p>
               </div>
-              <div className="w-px h-10 bg-white/10 hidden sm:block" />
-              <div className="text-center">
-                <p className="text-white font-bold text-xl">70%</p>
-                <p className="text-white/40 text-xs mt-1">Avg. Show Rate</p>
+              <div className="w-px h-10 bg-white/10" />
+              <div className="text-center flex-1">
+                <p className="text-white font-bold text-xl">$243M+</p>
+                <p className="text-white/40 text-xs mt-1">Sales Volume Generated</p>
               </div>
             </div>
           </div>
@@ -145,33 +145,33 @@ export default function Home() {
             {[
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2v24M2 14h24" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" /><circle cx="14" cy="14" r="12" stroke="#BB9A65" strokeWidth="2" opacity="0.3" /></svg>,
-                title: "Ads Aren't Converting",
-                desc: "You're spending thousands a month on ads for your service business and getting impressions, clicks — but no booked calls and no new clients.",
+                title: "Spending on Ads but Not Getting Clients",
+                desc: "You're putting money into marketing but the phone isn't ringing. Clicks and views don't pay the bills — booked appointments do.",
               },
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="4" stroke="#BB9A65" strokeWidth="2" opacity="0.3" /><path d="M9 14h10M14 9v10" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" /></svg>,
-                title: "Leads Aren't Closing",
-                desc: "Leads are coming in but they're not turning into paying clients. You've got names in a CRM and a calendar full of no-shows — not revenue.",
+                title: "Getting Leads but Not Closing Them",
+                desc: "Names are coming in but they're not turning into paying clients. Your calendar is full of no-shows and your team is chasing people who won't call back.",
               },
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z" stroke="#BB9A65" strokeWidth="2" strokeLinejoin="round" opacity="0.3" /><path d="M10 18l8-8" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" /></svg>,
-                title: "Show Rate Is Tanking",
-                desc: "People are booking calls but your show rate is 15, maybe 20 percent. 80% of what you spent to get that appointment just evaporated.",
+                title: "People Book but Don't Show Up",
+                desc: "You're paying to get someone to schedule, and then 80% of them never show. That's money you already spent — gone.",
               },
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 24l8-8 4 4 8-12" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
-                title: "Flying Blind on Numbers",
-                desc: "You don't know your cost per booked call, your cost to acquire a new client, or the lifetime value of each service relationship. You're guessing at scale.",
+                title: "No Idea What's Working",
+                desc: "You can't tell which marketing is actually bringing in clients and which is just burning cash. Without the numbers, every decision is a guess.",
               },
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="11" stroke="#BB9A65" strokeWidth="2" opacity="0.3" /><path d="M14 8v6l4 4" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
-                title: "Too Many Vendors, No System",
-                desc: "A media buyer here, a funnel builder there, someone for email and SMS — every one of them working in isolation with no one seeing the full picture.",
+                title: "Too Many People, Nobody in Charge",
+                desc: "You've got one person doing your ads, another doing your website, someone else doing emails — and none of them are talking to each other.",
               },
               {
                 icon: <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 8h20v14a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="#BB9A65" strokeWidth="2" opacity="0.3" /><path d="M10 14l3 3 5-6" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>,
-                title: "Expensive Guessing Game",
-                desc: "You can't tell if your marketing is actually profitable because nobody built a system that connects ad spend to booked calls to closed clients. Every month without that is money gone.",
+                title: "Marketing Feels Like a Money Pit",
+                desc: "You know you should be marketing but it feels like you're throwing money into a hole with no way to tell if any of it is coming back.",
               },
             ].map((item, i) => (
               <div key={i} className="card-dark p-8 group">
@@ -308,300 +308,224 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      {/* ════════════════ WHAT SERVICE BUSINESSES WORK WITH US TO SOLVE ════════════════ */}
-      <RevealSection className="py-16 md:py-24" id="common-problems">
+      {/* ════════════════ WHAT WE DO FOR YOU ════════════════ */}
+      <RevealSection className="pt-16 md:pt-24 pb-8 md:pb-12" id="common-problems">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-6">
             <p className="text-brand-gold text-sm font-semibold tracking-[0.25em] uppercase mb-4">
-              The Real Problems
+              What We Actually Do
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              What Most Service Businesses{" "}
-              <span className="gradient-text">Work With Us to Solve</span>
+              We Fix the Three Things{" "}
+              <span className="gradient-text">Costing You Clients</span>
             </h2>
             <p className="text-white/50 text-lg">
-              It&apos;s rarely just one thing. Most service businesses come to us with
-              problems across their ads, their landing pages, and their backend —
-              and they don&apos;t realize how connected it all is until we show them.
+              Most service businesses are losing money in three places: their ads,
+              their website, and what happens after someone reaches out. We fix all three.
             </p>
           </div>
         </div>
       </RevealSection>
 
-      {/* ════════════════ FACEBOOK ADS BREAKDOWN ════════════════ */}
-      <RevealSection className="py-16 md:py-24 bg-brand-dark" id="facebook-ads">
+      {/* ════════════════ FACEBOOK & INSTAGRAM ADS ════════════════ */}
+      <RevealSection className="py-10 md:py-16 bg-brand-dark" id="facebook-ads">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="lg:w-1/3">
-              <div className="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-5">
-                <svg viewBox="0 0 36 36" fill="none" className="w-8 h-8"><path d="M18 3C9.716 3 3 9.716 3 18c0 7.487 5.488 13.693 12.656 14.818V22.225h-3.808V18h3.808v-3.223c0-3.76 2.24-5.836 5.664-5.836 1.64 0 3.358.293 3.358.293v3.692h-1.891c-1.864 0-2.444 1.157-2.444 2.344V18h4.16l-.665 4.225h-3.495v10.593C27.512 31.693 33 25.487 33 18c0-8.284-6.716-15-15-15z" fill="#BB9A65"/></svg>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Facebook &amp; Instagram Ads
-              </h3>
-              <p className="text-white/50 leading-relaxed">
-                Meta ads are the most powerful client acquisition tool for service businesses —
-                when they&apos;re set up right. Most aren&apos;t. Here&apos;s what we see broken in almost
-                every account we audit.
-              </p>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-5 mx-auto">
+              <svg viewBox="0 0 36 36" fill="none" className="w-8 h-8"><path d="M18 3C9.716 3 3 9.716 3 18c0 7.487 5.488 13.693 12.656 14.818V22.225h-3.808V18h3.808v-3.223c0-3.76 2.24-5.836 5.664-5.836 1.64 0 3.358.293 3.358.293v3.692h-1.891c-1.864 0-2.444 1.157-2.444 2.344V18h4.16l-.665 4.225h-3.495v10.593C27.512 31.693 33 25.487 33 18c0-8.284-6.716-15-15-15z" fill="#BB9A65"/></svg>
             </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Facebook &amp; Instagram Ads
+            </h3>
+            <p className="text-white/50 leading-relaxed">
+              We get your business in front of the right people on social media — and make sure the ads
+              actually bring in clients, not just likes and clicks.
+            </p>
+          </div>
 
-            <div className="lg:w-2/3 grid sm:grid-cols-2 gap-5">
-              {[
-                {
-                  title: "Weak or Generic Offer",
-                  desc: "Your ad says \"Book a Free Consultation.\" So does every competitor in your market. If your offer doesn't stand out, your cost per lead will stay high and your quality will stay low. The offer is the ad.",
-                },
-                {
-                  title: "Stale Ad Creative",
-                  desc: "Running the same 3–5 ads for months is the fastest way to tank your results. Any serious agency is rotating between 25 and 200 ad creatives per month at your level. If your creative isn't fresh, your CPMs climb and your relevance drops.",
-                },
-                {
-                  title: "Bad Campaign Structure",
-                  desc: "Campaigns with no testing framework, no proper audience segmentation, and no separation between cold and warm traffic. You're letting the algorithm guess instead of giving it a system to optimize against.",
-                },
-                {
-                  title: "No Tracking or Pixel Setup",
-                  desc: "If your pixel isn't properly configured with the right conversion events, Facebook has no idea what's working. You're paying for data you can't use and optimizing toward the wrong actions.",
-                },
-                {
-                  title: "Ads Don't Speak to the Audience",
-                  desc: "Your ads are talking about your service instead of your prospect's problem. People scroll past features — they stop for pain. If the hook doesn't hit an emotional nerve in the first 3 seconds, you've already lost them.",
-                },
-                {
-                  title: "Landing Page Converting Under 6%",
-                  desc: "You can have the best ads in the world and still bleed money if your landing page doesn't convert. If you're below 6%, the page is the bottleneck — not the traffic. We see this in 8 out of 10 service business accounts.",
-                },
-              ].map((item, i) => (
-                <div key={i} className="card-dark p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" /></svg>
-                    </div>
-                    <h4 className="font-bold text-white">{item.title}</h4>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                problem: "Your ads look like everyone else's",
+                solution: "We build you a unique offer and fresh ad content every month — between 25 and 200 new creatives — so your business stands out and people actually stop scrolling.",
+              },
+              {
+                problem: "You're spending money but the phone isn't ringing",
+                solution: "We set up your campaigns so Facebook learns who your real customers are and finds more of them — instead of showing your ads to people who will never buy.",
+              },
+              {
+                problem: "People click your ad but don't book or call",
+                solution: "We build you a dedicated landing page for every campaign that's designed to convert visitors into booked appointments — not just send them to your homepage.",
+              },
+              {
+                problem: "You have no idea what's working",
+                solution: "We install proper tracking so you can see exactly which ads are bringing in real clients — and we cut the ones that aren't.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="card-dark p-7">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2.5 2.5l5 5M7.5 2.5l-5 5" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round" /></svg>
                   </div>
-                  <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-white/50 text-sm">{item.problem}</p>
                 </div>
-              ))}
-            </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2.5 5l2 2 3-4" stroke="#BB9A65" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </div>
+                  <p className="text-white font-medium text-sm">{item.solution}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </RevealSection>
 
-      {/* ════════════════ GOOGLE ADS BREAKDOWN ════════════════ */}
-      <RevealSection className="py-16 md:py-24" id="google-ads">
+      {/* ════════════════ GOOGLE ADS & LSA ════════════════ */}
+      <RevealSection className="py-10 md:py-16" id="google-ads">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
-            <div className="lg:w-1/3">
-              <div className="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-5">
-                <svg viewBox="0 0 36 36" fill="none" className="w-8 h-8"><path d="M33 18.257c0-1.16-.104-2.274-.298-3.346H18v6.332h8.413c-.363 1.955-1.466 3.612-3.125 4.72v3.923h5.063C31.1 27.253 33 23.065 33 18.257z" fill="#BB9A65"/><path d="M18 33c4.23 0 7.776-1.402 10.35-3.796l-5.062-3.924c-1.403.94-3.198 1.496-5.288 1.496-4.067 0-7.51-2.747-8.74-6.438H4.035v4.05C6.594 29.776 11.93 33 18 33z" fill="#BB9A65"/><path d="M9.26 20.338A9.013 9.013 0 018.79 18c0-.812.172-1.601.47-2.338v-4.05H4.035A14.978 14.978 0 003 18c0 2.425.58 4.72 1.608 6.75l5.252-4.05z" fill="#BB9A65" opacity=".6"/><path d="M18 9.224c2.292 0 4.35.788 5.968 2.335l4.475-4.475C25.768 4.543 22.222 3 18 3 11.93 3 6.594 6.224 4.035 11.612l5.225 4.05c1.23-3.69 4.673-6.438 8.74-6.438z" fill="#BB9A65" opacity=".6"/></svg>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Google Ads &amp; LSA
-              </h3>
-              <p className="text-white/50 leading-relaxed">
-                Google puts you in front of people actively searching for your service right now.
-                But if your keywords, bids, or landing pages are off, you&apos;re just funding your
-                competitors&apos; growth.
-              </p>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-5 mx-auto">
+              <svg viewBox="0 0 36 36" fill="none" className="w-8 h-8"><path d="M33 18.257c0-1.16-.104-2.274-.298-3.346H18v6.332h8.413c-.363 1.955-1.466 3.612-3.125 4.72v3.923h5.063C31.1 27.253 33 23.065 33 18.257z" fill="#BB9A65"/><path d="M18 33c4.23 0 7.776-1.402 10.35-3.796l-5.062-3.924c-1.403.94-3.198 1.496-5.288 1.496-4.067 0-7.51-2.747-8.74-6.438H4.035v4.05C6.594 29.776 11.93 33 18 33z" fill="#BB9A65"/><path d="M9.26 20.338A9.013 9.013 0 018.79 18c0-.812.172-1.601.47-2.338v-4.05H4.035A14.978 14.978 0 003 18c0 2.425.58 4.72 1.608 6.75l5.252-4.05z" fill="#BB9A65" opacity=".6"/><path d="M18 9.224c2.292 0 4.35.788 5.968 2.335l4.475-4.475C25.768 4.543 22.222 3 18 3 11.93 3 6.594 6.224 4.035 11.612l5.225 4.05c1.23-3.69 4.673-6.438 8.74-6.438z" fill="#BB9A65" opacity=".6"/></svg>
             </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Google Ads &amp; Local Services
+            </h3>
+            <p className="text-white/50 leading-relaxed">
+              When someone in your area searches for exactly what you do, we make sure
+              your business shows up first — and that they actually call you, not your competitor.
+            </p>
+          </div>
 
-            <div className="lg:w-2/3 grid sm:grid-cols-2 gap-5">
-              {[
-                {
-                  title: "Bidding on the Wrong Keywords",
-                  desc: "You're targeting broad, high-volume keywords that sound relevant but attract tire-kickers, not buyers. A roofer bidding on \"roof repair\" instead of \"emergency roof repair near me\" is paying 3x more for leads that never close.",
-                },
-                {
-                  title: "Overpaying for Competitive Terms",
-                  desc: "You're going head-to-head on the most expensive keywords in your industry without the budget to sustain it. Your spend drains before noon and you wonder why the phone stops ringing in the afternoon.",
-                },
-                {
-                  title: "Wrong Landing Page for the Search",
-                  desc: "Someone searches \"water heater installation\" and lands on your homepage. That's not a match — it's a bounce. Every keyword group needs its own landing page that mirrors exactly what the person searched for. Mismatch kills your Quality Score and your conversion rate.",
-                },
-                {
-                  title: "No Conversion Tracking",
-                  desc: "If you're not tracking which keywords lead to actual phone calls and booked jobs — not just clicks — you're optimizing blind. Google needs conversion data to find you more of the right people.",
-                },
-                {
-                  title: "LSA Profile Not Optimized",
-                  desc: "Your Google Local Services profile is half-filled, missing reviews, or not verified properly. LSA rewards trust signals — background checks, review velocity, response time. If you're not managing these, you're paying more per lead than you should.",
-                },
-                {
-                  title: "No Negative Keywords",
-                  desc: "You're paying for clicks from people searching for DIY tutorials, job applications, and free services. Without a negative keyword list that gets updated weekly, you're hemorrhaging budget on traffic that was never going to convert.",
-                },
-              ].map((item, i) => (
-                <div key={i} className="card-dark p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" /></svg>
-                    </div>
-                    <h4 className="font-bold text-white">{item.title}</h4>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                problem: "You're paying for clicks from people who will never hire you",
+                solution: "We target the exact searches your real customers are typing — and block the ones that waste your money, like people looking for DIY tips or job applications.",
+              },
+              {
+                problem: "Your budget runs out before the day is over",
+                solution: "We restructure your campaigns so your money goes toward the searches that actually turn into paying clients — not the most expensive keywords in your industry.",
+              },
+              {
+                problem: "People search for your service and land on the wrong page",
+                solution: "We build dedicated pages that match exactly what someone searched for — so when they click, they see the service they need and a clear way to contact you.",
+              },
+              {
+                problem: "Your Google Local Services listing isn't getting you calls",
+                solution: "We optimize your profile, help you get more reviews, and make sure you're verified — so Google ranks you higher and sends you better leads at a lower cost.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="card-dark p-7">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2.5 2.5l5 5M7.5 2.5l-5 5" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round" /></svg>
                   </div>
-                  <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-white/50 text-sm">{item.problem}</p>
                 </div>
-              ))}
-            </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2.5 5l2 2 3-4" stroke="#BB9A65" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </div>
+                  <p className="text-white font-medium text-sm">{item.solution}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </RevealSection>
 
-      {/* ════════════════ BACKEND SALES SYSTEMS / CRM ════════════════ */}
-      <RevealSection className="py-16 md:py-24 bg-brand-dark" id="backend-systems">
+      {/* ════════════════ SALES SYSTEM & FOLLOW-UP ════════════════ */}
+      <RevealSection className="py-10 md:py-16 bg-brand-dark" id="backend-systems">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="lg:w-1/3">
-              <div className="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-5">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="4" stroke="#BB9A65" strokeWidth="2" /><path d="M10 12h12M10 16h8M10 20h10" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" /></svg>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Backend Sales Systems &amp; CRM
-              </h3>
-              <p className="text-white/50 leading-relaxed">
-                The best ads in the world won&apos;t save you if your backend can&apos;t handle
-                the leads. This is where most service businesses silently lose the most money —
-                and don&apos;t even realize it.
-              </p>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-5 mx-auto">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="4" stroke="#BB9A65" strokeWidth="2" /><path d="M10 12h12M10 16h8M10 20h10" stroke="#BB9A65" strokeWidth="2" strokeLinecap="round" /></svg>
             </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Your Sales System &amp; Follow-Up
+            </h3>
+            <p className="text-white/50 leading-relaxed">
+              Getting leads is only half the battle. If nobody calls them back fast enough,
+              if they don&apos;t show up to their appointment, or if they fall through the cracks —
+              you paid for that lead and got nothing. We fix that.
+            </p>
+          </div>
 
-            <div className="lg:w-2/3 grid sm:grid-cols-2 gap-5">
-              {[
-                {
-                  title: "Speed-to-Lead Is Too Slow",
-                  desc: "When someone requests a quote or books a call and no team member contacts them within 3 minutes, you've likely lost them to a competitor who did. Studies show response time over 5 minutes drops contact rates by 80%. You need a system that ensures this never happens.",
-                },
-                {
-                  title: "No KPI Tracking",
-                  desc: "You can't tell us your cost per lead, cost per booked appointment, show rate, close rate, or client lifetime value. Without these numbers you're making every decision — including how much to spend on ads — based on gut feeling.",
-                },
-                {
-                  title: "Leads Slipping Through the Cracks",
-                  desc: "Someone fills out your form on a Friday and nobody follows up until Monday. Or a lead goes cold and sits in your CRM forever because there's no re-engagement sequence. Every lost lead is ad spend you already paid for and will never get back.",
-                },
-                {
-                  title: "No Follow-Up Automations",
-                  desc: "You're relying on your team to manually follow up with every lead via text and email. That works at 10 leads a month. At 100+, it breaks. You need automated nurture sequences, appointment reminders, and no-show follow-ups running 24/7.",
-                },
-                {
-                  title: "Team Accountability Gaps",
-                  desc: "You don't know which team member is calling leads, how fast they're responding, or what their close rate is. Without visibility into your team's performance, you can't coach, you can't optimize, and you can't scale.",
-                },
-                {
-                  title: "No Pipeline Visibility",
-                  desc: "Your CRM is a graveyard of contacts with no stages, no tags, and no way to see where money is stuck. You should be able to see at a glance how many leads came in, how many booked, how many showed, and how many closed — this week, today, right now.",
-                },
-              ].map((item, i) => (
-                <div key={i} className="card-dark p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" /></svg>
-                    </div>
-                    <h4 className="font-bold text-white">{item.title}</h4>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                problem: "Leads come in but nobody calls them fast enough",
+                solution: "We set up instant notifications and automations so every new lead gets a call or text within minutes — not hours. The faster you respond, the more you close.",
+              },
+              {
+                problem: "People book appointments but don't show up",
+                solution: "We build automated reminder sequences — texts and emails — that confirm the appointment, remind them the day before, and follow up if they miss it.",
+              },
+              {
+                problem: "You don't know your numbers",
+                solution: "We set up dashboards so you can see exactly how much it costs to get a lead, book an appointment, and close a new client — in real time, not at the end of the month.",
+              },
+              {
+                problem: "Old leads are sitting untouched and forgotten",
+                solution: "We build follow-up sequences that automatically re-engage leads over weeks and months. Some of your best clients will come from leads you thought were dead.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="card-dark p-7">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2.5 2.5l5 5M7.5 2.5l-5 5" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round" /></svg>
                   </div>
-                  <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-white/50 text-sm">{item.problem}</p>
                 </div>
-              ))}
-            </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2.5 5l2 2 3-4" stroke="#BB9A65" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </div>
+                  <p className="text-white font-medium text-sm">{item.solution}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </RevealSection>
 
       {/* ════════════════ WHAT THIS IS COSTING YOU ════════════════ */}
-      <RevealSection className="py-16 md:py-24">
+      <RevealSection className="py-12 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <p className="text-brand-gold text-sm font-semibold tracking-[0.25em] uppercase mb-4">
-              The Real Cost
+              Add It Up
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               What This Is{" "}
-              <span className="gradient-text">Actually Costing You</span>
+              <span className="gradient-text">Costing You Every Year</span>
             </h2>
             <p className="text-white/50 text-lg">
-              Most service business owners look at these problems one at a time and
-              think &ldquo;it&apos;s not that bad.&rdquo; But when you add them all up over
-              12 months, the number is staggering.
+              Each of these feels small on its own. Add them up over 12 months
+              and the number will make you sick.
             </p>
           </div>
 
-          <div className="card-dark p-8 md:p-10">
-            <p className="text-white/30 text-xs font-semibold tracking-[0.2em] uppercase mb-8">
-              Estimated Annual Loss — Service Business Doing $250K+/mo
-            </p>
-
-            <p className="text-white/20 text-xs uppercase tracking-widest mb-6">Top of Funnel — Where the Most Money Burns</p>
-
-            <div className="space-y-6">
-              {[
-                {
-                  label: "Wasted ad spend on stale creative, bad targeting & poor campaign structure — 30–50% of your budget is buying nothing",
-                  amount: "$36,000 – $120,000",
-                },
-                {
-                  label: "Wrong Google keywords, no negative keywords & paying for clicks from people who were never going to buy",
-                  amount: "$18,000 – $72,000",
-                },
-                {
-                  label: "Landing pages converting under 6% — you paid for every one of those clicks and then lost them at the door",
-                  amount: "$60,000 – $180,000",
-                },
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-6 border-b border-white/5">
-                  <span className="text-white/50 text-sm leading-relaxed">{item.label}</span>
-                  <span className="text-red-400 font-semibold text-sm whitespace-nowrap">- {item.amount}</span>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-white/20 text-xs uppercase tracking-widest mt-8 mb-6">Middle of Funnel — Where Leads Go to Die</p>
-
-            <div className="space-y-6">
-              {[
-                {
-                  label: "Speed-to-lead over 3 minutes — the lead came in hot, nobody called fast enough, they called your competitor instead",
-                  amount: "$48,000 – $144,000",
-                },
-                {
-                  label: "No-show appointments — they booked but never showed because there's no reminder sequence or pre-call nurture",
-                  amount: "$60,000 – $180,000",
-                },
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-6 border-b border-white/5">
-                  <span className="text-white/50 text-sm leading-relaxed">{item.label}</span>
-                  <span className="text-red-400 font-semibold text-sm whitespace-nowrap">- {item.amount}</span>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-white/20 text-xs uppercase tracking-widest mt-8 mb-6">Bottom of Funnel — Money Left on the Table</p>
-
-            <div className="space-y-6">
-              {[
-                {
-                  label: "Leads sitting dead in your CRM — no re-engagement, no follow-up sequence, no second chance at revenue you already paid to generate",
-                  amount: "$24,000 – $72,000",
-                },
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-6 border-b border-white/5">
-                  <span className="text-white/50 text-sm leading-relaxed">{item.label}</span>
-                  <span className="text-red-400 font-semibold text-sm whitespace-nowrap">- {item.amount}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 pt-8 border-t-2 border-brand-gold/30">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <span className="text-white font-bold text-lg">Estimated Total Annual Loss</span>
-                <span className="text-red-400 font-bold text-2xl md:text-3xl">$246,000 – $768,000+</span>
+          <div className="space-y-4">
+            {[
+              { label: "Ad spend wasted on the wrong people", amount: "$36K – $120K" },
+              { label: "Google clicks that never turn into calls", amount: "$18K – $72K" },
+              { label: "Website visitors who leave without booking", amount: "$60K – $180K" },
+              { label: "Leads you were too slow to call back", amount: "$48K – $144K" },
+              { label: "Appointments that no-showed", amount: "$60K – $180K" },
+              { label: "Old leads nobody ever followed up on", amount: "$24K – $72K" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center justify-between gap-4 py-3 border-b border-white/5">
+                <span className="text-white/60 text-sm">{item.label}</span>
+                <span className="text-red-400 font-semibold text-sm whitespace-nowrap">- {item.amount}</span>
               </div>
-              <p className="text-white/30 text-sm mt-4 leading-relaxed">
-                Based on a service business spending $10K–$50K/mo on ads. That&apos;s not a
-                marketing budget problem — that&apos;s a system problem. And every month you
-                wait to fix it, the meter is still running.
-              </p>
-            </div>
+            ))}
+          </div>
+
+          <div className="mt-6 pt-6 border-t-2 border-brand-gold/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <span className="text-white font-bold text-lg">Total per year</span>
+            <span className="text-red-400 font-bold text-2xl md:text-3xl">$246K – $768K+</span>
           </div>
         </div>
       </RevealSection>
@@ -617,22 +541,16 @@ export default function Home() {
             <span className="gradient-text">It&apos;s the Whole System.</span>
           </h2>
           <p className="text-white/50 text-lg md:text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
-            If you read through those sections and found yourself nodding at problems
-            across your ads, your landing pages, your CRM, and your sales process —
-            that&apos;s not a coincidence. It&apos;s a pattern we see in nearly every service
-            business that comes to us.
+            If any of those sections hit close to home, you&apos;re not alone. We see the
+            same pattern in almost every service business that comes to us — the ads,
+            the website, and the follow-up are all disconnected and leaking money.
           </p>
           <p className="text-white/50 text-lg md:text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
-            You don&apos;t have an ad problem. You don&apos;t have a landing page problem.
-            You don&apos;t have a CRM problem. You have a{" "}
-            <span className="text-white font-semibold">client acquisition system</span> that
-            was never built as one connected thing — and it&apos;s leaking money at every stage.
-          </p>
-          <p className="text-white/50 text-lg md:text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
-            Fixing one piece in isolation doesn&apos;t work. Hiring a better media buyer
-            doesn&apos;t fix a 2% landing page. A better landing page doesn&apos;t fix a team
-            that takes 4 hours to call a lead back. The entire cold acquisition system —
-            from the first ad impression to the signed contract — needs to work together.
+            Better ads won&apos;t help if your website doesn&apos;t convert. A better website
+            won&apos;t help if nobody calls the lead back for 4 hours. Everything from the
+            moment someone first sees your business to the moment they become a paying
+            client needs to work{" "}
+            <span className="text-white font-semibold">as one connected system</span>.
             That&apos;s what we build.
           </p>
 
