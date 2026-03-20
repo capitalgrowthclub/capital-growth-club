@@ -111,7 +111,7 @@ export default function SurveyModal({ open, onClose }: SurveyModalProps) {
         height: `${6 + Math.random() * 8}px`,
         backgroundColor: confettiColors[i % confettiColors.length],
         animationDuration: `${2 + Math.random() * 3}s`,
-        animationDelay: `${Math.random() * 2}s`,
+        animationDelay: `${-Math.random() * 5}s`,
         drift: `${-40 + Math.random() * 80}px`,
         rotation: `${360 + Math.random() * 720}deg`,
       })),
