@@ -1,6 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+
+const confettiColors = ["#BB9A65", "#FFFCD8", "#C9AE84", "#D4B87A", "#CEAE78"];
 
 interface SurveyModalProps {
   open: boolean;
@@ -100,6 +102,21 @@ export default function SurveyModal({ open, onClose }: SurveyModalProps) {
   const [otpCode, setOtpCode] = useState("");
   const [otpError, setOtpError] = useState("");
   const [otpSending, setOtpSending] = useState(false);
+
+  const confetti = useMemo(
+    () =>
+      Array.from({ length: 40 }).map((_, i) => ({
+        left: `${Math.random() * 100}%`,
+        width: `${6 + Math.random() * 8}px`,
+        height: `${6 + Math.random() * 8}px`,
+        backgroundColor: confettiColors[i % confettiColors.length],
+        animationDuration: `${2 + Math.random() * 3}s`,
+        animationDelay: `${Math.random() * 2}s`,
+        drift: `${-40 + Math.random() * 80}px`,
+        rotation: `${360 + Math.random() * 720}deg`,
+      })),
+    []
+  );
 
   const totalSteps = questions.length + 1; // +1 for contact info
   const progress = verifyStep ? 100 : ((step + 1) / totalSteps) * 100;
@@ -310,34 +327,54 @@ export default function SurveyModal({ open, onClose }: SurveyModalProps) {
         <div className="p-8 md:p-12">
           {submitted ? (
             /* Success State — shown after OTP verified */
-            <div className="text-center py-8">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full gradient-bg flex items-center justify-center">
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                >
-                  <path
-                    d="M12 20l6 6 12-12"
-                    stroke="#0E0E0E"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+            <div className="text-center py-8 relative">
+              {/* Confetti */}
+              {confetti.map((p, i) => (
+                <div
+                  key={i}
+                  className="confetti-particle"
+                  style={{
+                    left: p.left,
+                    width: p.width,
+                    height: p.height,
+                    backgroundColor: p.backgroundColor,
+                    animationDuration: p.animationDuration,
+                    animationDelay: p.animationDelay,
+                    "--drift": p.drift,
+                    "--rotation": p.rotation,
+                  } as React.CSSProperties}
+                />
+              ))}
+
+              <div className="relative z-10">
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full gradient-bg flex items-center justify-center">
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 20l6 6 12-12"
+                      stroke="#0E0E0E"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-3xl font-bold mb-3">Application Received.</h3>
+                <p className="text-white/60 text-lg mb-2">
+                  We&apos;re reviewing your information now.
+                </p>
+                <p className="text-white/40 mb-8">
+                  If you qualify, a member of our team will reach out within
+                  24 hours to schedule your strategy session.
+                </p>
+                <button onClick={handleClose} className="btn-primary">
+                  Close
+                </button>
               </div>
-              <h3 className="text-3xl font-bold mb-3">You&apos;re In.</h3>
-              <p className="text-white/60 text-lg mb-2">
-                We&apos;ve received your application.
-              </p>
-              <p className="text-white/40 mb-8">
-                A member of our team will reach out within 24 hours to schedule
-                your strategy session.
-              </p>
-              <button onClick={handleClose} className="btn-primary">
-                Close
-              </button>
             </div>
           ) : verifyStep ? (
             /* Phone Verification Step */
