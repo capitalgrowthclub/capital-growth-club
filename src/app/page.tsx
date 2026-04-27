@@ -6,6 +6,7 @@ import RevealSection from "@/components/RevealSection";
 import AnimatedStat from "@/components/AnimatedStat";
 import FaqSection from "@/components/FaqSection";
 import TestimonialScroll from "@/components/TestimonialScroll";
+import HeroVideo from "@/components/HeroVideo";
 
 /* ─── Main Page (Server Component) ─── */
 export default function Home() {
@@ -42,20 +43,7 @@ export default function Home() {
             </p>
 
             {/* VSL Video */}
-            <div className="relative w-full max-w-3xl mb-10">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-brand-card" style={{ animation: "pulse-glow 4s ease-in-out infinite" }}>
-                <video
-                  className="w-full aspect-video object-cover"
-                  src="https://assets.cdn.filesafe.space/gg2Mgpn5GTYN7nAwd00W/media/69ef6578d31f44bbd812efae.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </div>
-              <div className="absolute -bottom-3 -right-3 w-24 h-24 border-b-2 border-r-2 border-brand-gold/20 rounded-br-2xl pointer-events-none" />
-              <div className="absolute -top-3 -left-3 w-24 h-24 border-t-2 border-l-2 border-brand-gold/20 rounded-tl-2xl pointer-events-none" />
-            </div>
+            <HeroVideo />
 
             {/* CTA Button */}
             <SurveyButton className="btn-primary !text-lg !py-5 !px-12 mb-10">
